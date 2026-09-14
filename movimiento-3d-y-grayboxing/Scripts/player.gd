@@ -7,9 +7,11 @@ extends CharacterBody3D
 @export var move_speed := 8.0
 @export var acceleration := 20.0
 @export var rotation_speed := 12.0
+@export var jump_impulse := 12.0
 
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
+var _gravity := -30.0
 
 @onready var _camera_pivot: Node3D = %"Camara Pivot"
 @onready var _camera: Camera3D = %Camera3D
@@ -46,7 +48,14 @@ func _physics_process(delta: float) -> void:
 	move_direction.y = 0.0
 	move_direction = move_direction.normalized()
 	
+	var y_velocity := velocity.y
+	velocity.y = 0.0
 	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
+	velocity.y = y_velocity + _gravity * delta
+	
+	var is_starting_jump := Input.is_action_just_pressed("Saltar") and is_on_floor()
+	if is_starting_jump:
+		velocity.y += jump_impulse
 	
 	move_and_slide()
 	

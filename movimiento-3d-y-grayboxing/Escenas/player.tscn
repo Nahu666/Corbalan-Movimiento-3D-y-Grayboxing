@@ -4,9 +4,17 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uahsp"]
+albedo_color = Color(0.89228016, 0.667455, 0.0891499, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i8vih"]
+material = SubResource("StandardMaterial3D_uahsp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1ytv"]
+albedo_color = Color(0.89411765, 0.6666667, 0.09019608, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+material = SubResource("StandardMaterial3D_d1ytv")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cnkc8"]
 
