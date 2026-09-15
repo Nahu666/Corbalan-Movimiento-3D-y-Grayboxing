@@ -11,10 +11,16 @@ albedo_color = Color(0.89228016, 0.667455, 0.0891499, 1)
 material = SubResource("StandardMaterial3D_uahsp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1ytv"]
-albedo_color = Color(0.89411765, 0.6666667, 0.09019608, 1)
+albedo_color = Color(0.89411765, 0.36078432, 0.09019608, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
 material = SubResource("StandardMaterial3D_d1ytv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnkc8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+material = SubResource("StandardMaterial3D_cnkc8")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cnkc8"]
 
@@ -30,6 +36,14 @@ mesh = SubResource("CapsuleMesh_i8vih")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D" unique_id=932472739]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0.5, 0.25)
 mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D" unique_id=1994450344]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 0.28, 0.516, 0.345)
+mesh = SubResource("SphereMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D" unique_id=435328929]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, -0.28, 0.516, 0.345)
+mesh = SubResource("SphereMesh_g4v7s")
 
 [node name="Camara Pivot" type="Node3D" parent="." unique_id=1199514880]
 unique_name_in_owner = true
